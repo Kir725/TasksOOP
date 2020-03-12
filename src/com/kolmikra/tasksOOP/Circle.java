@@ -1,5 +1,7 @@
 package com.kolmikra.tasksOOP;
 
+import java.util.Objects;
+
 public class Circle {
     private double radius = 1.0d;
     private String color = "red";
@@ -39,5 +41,21 @@ public class Circle {
 
     public double getArea() {
         return Math.pow(radius, 2) * Math.PI;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Circle circle = (Circle) o;
+        return Double.compare(circle.radius, radius) == 0 &&
+                color.equals(circle.color);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Double.hashCode(radius);
+        result = 31 * result + color.hashCode();
+        return result;
     }
 }

@@ -1,5 +1,8 @@
 package com.kolmikra.tasksOOP;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Book {
     private String name;
     private double price;
@@ -52,6 +55,22 @@ public class Book {
         }
 
         return "Book[name=" + name + ", authors{" + authorsList + "}, price=" + price + ", qty=" + qty + "]";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return name.equals(book.name) &&
+                Arrays.equals(authors, book.authors);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(name);
+        result = 31 * result + Arrays.hashCode(authors);
+        return result;
     }
 
     public String getAuthorNames() {

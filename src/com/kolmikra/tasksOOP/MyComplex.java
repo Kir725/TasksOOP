@@ -1,5 +1,7 @@
 package com.kolmikra.tasksOOP;
 
+import java.util.Objects;
+
 public class MyComplex {
     private double real = 0.0;
     private double imag = 0.0;
@@ -36,6 +38,20 @@ public class MyComplex {
     @Override
     public String toString() {
         return imag >= 0 ? "(" + real + "+" + imag + "i)" : "(" + real + imag + "i)";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MyComplex myComplex = (MyComplex) o;
+        return Double.compare(myComplex.real, real) == 0 &&
+                Double.compare(myComplex.imag, imag) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(real, imag);
     }
 
     public boolean isReal() {

@@ -1,5 +1,7 @@
 package com.kolmikra.tasksOOP;
 
+import java.util.Objects;
+
 public class MyPoint {
     private int x;
     private int y;
@@ -54,4 +56,17 @@ public class MyPoint {
         return distance(0, 0);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MyPoint myPoint = (MyPoint) o;
+        return x == myPoint.x &&
+                y == myPoint.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
+    }
 }
