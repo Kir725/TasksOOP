@@ -1,6 +1,4 @@
-package com.kolmikra.tasksOOP;
-
-import java.util.Objects;
+package com.kolmikra.tasksOOP.literature;
 
 public class Author {
     private String name;

@@ -1,4 +1,4 @@
-package com.kolmikra.tasksOOP;
+package com.kolmikra.tasksOOP.algebra;
 
 import java.util.Objects;
 

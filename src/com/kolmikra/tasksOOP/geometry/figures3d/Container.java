@@ -1,4 +1,4 @@
-package com.kolmikra.tasksOOP;
+package com.kolmikra.tasksOOP.geometry.figures3d;
 
 import java.util.Objects;
 

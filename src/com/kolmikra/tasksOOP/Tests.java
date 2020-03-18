@@ -1,7 +1,13 @@
 package com.kolmikra.tasksOOP;
 
-import java.net.Socket;
-import java.util.Collections;
+import com.kolmikra.tasksOOP.algebra.MyComplex;
+import com.kolmikra.tasksOOP.algebra.MyPolynomial;
+import com.kolmikra.tasksOOP.geometry.MyTriangle;
+import com.kolmikra.tasksOOP.geometry.figures3d.Ball;
+import com.kolmikra.tasksOOP.geometry.figures3d.Container;
+import com.kolmikra.tasksOOP.literature.Author;
+import com.kolmikra.tasksOOP.literature.Book;
+import com.kolmikra.tasksOOP.staff.Employee;
 
 public class Tests {
     public static void main(String[] args) {
@@ -12,7 +18,7 @@ public class Tests {
         System.out.println(employee.getAnnualSalary());
         System.out.println(employee.raiseSalary(50) + "\n");
 
-        Book steppenwolf = new Book("SteppenWoolf", 1500, new Author[]{new Author("German Gesse", "GG@mail.com", 'M')}, 200);
+        Book steppenwolf = new Book("SteppenWoolf", 1500, new Author[]{new Author("German Gesse", "GG@mail.com", 'M'),new Author("Abraham Lincoln", "GG@mail.com", 'M')}, 200);
         System.out.println(steppenwolf);
 
         System.out.println(steppenwolf.getAuthorNames()+"\n");
@@ -33,6 +39,9 @@ public class Tests {
         MyPolynomial polynomialSecond = new MyPolynomial(3,2,4);
         System.out.println(polynomialFirst.add(polynomialSecond)+"\n");
         System.out.println(polynomialFirst.multiply(polynomialSecond)+"\n");
+
+        MyTriangle triangle = new MyTriangle(0,6,0,0,6,0);
+        System.out.println(triangle.getType());
 
         Ball ball = new Ball(5,4,2,1,90);
         Container bigContainer = new Container(0,0,8,7);

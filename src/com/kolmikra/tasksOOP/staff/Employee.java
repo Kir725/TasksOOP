@@ -1,4 +1,4 @@
-package com.kolmikra.tasksOOP;
+package com.kolmikra.tasksOOP.staff;
 
 import java.util.Objects;
 

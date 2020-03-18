@@ -1,4 +1,4 @@
-package com.kolmikra.tasksOOP;
+package com.kolmikra.tasksOOP.literature;
 
 import java.util.Arrays;
 import java.util.Objects;

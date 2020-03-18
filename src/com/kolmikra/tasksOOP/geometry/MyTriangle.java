@@ -1,4 +1,4 @@
-package com.kolmikra.tasksOOP;
+package com.kolmikra.tasksOOP.geometry;
 
 import java.util.Objects;
 
@@ -48,11 +48,11 @@ public class MyTriangle {
         double sideA = v1.distance(v2);
         double sideB = v2.distance(v3);
         double sideC = v3.distance(v1);
-        if (sideA == sideB && sideB == sideC) {
-            return "Equilateral";
-        } else if (sideA == sideB || sideB == sideC || sideC == sideA) {
-            return "Isosceles";
+        if (Double.compare(sideB, sideA) == 0 && Double.compare(sideB, sideC) == 0) {
+            return TriangleType.EQUILATERAL.getType();
+        } else if (Double.compare(sideB, sideA) == 0 || Double.compare(sideB, sideC) == 0 || Double.compare(sideA, sideC) == 0) {
+            return TriangleType.ISOSCELES.getType();
         }
-        return "Scalene";
+        return TriangleType.SCALENE.getType();
     }
 }
